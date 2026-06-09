@@ -373,6 +373,16 @@ jobs:
           # 可选值: tencent, akshare_sina, efinance, akshare_em, tushare
           # 如果有 Tushare Pro 高积分账号，可将 tushare 放在首位
           REALTIME_SOURCE_PRIORITY: ${{ vars.REALTIME_SOURCE_PRIORITY || 'tencent,akshare_sina,efinance,akshare_em' }}
+
+           # ==========================================
+          # 回测
+          # ==========================================
+          BACKTEST_ENABLED: true
+          BACKTEST_EVAL_WINDOW_DAYS: 10
+          BACKTEST_MIN_AGE_DAYS: 14
+          BACKTEST_ENGINE_VERSION: v1
+          BACKTEST_NEUTRAL_BAND_PCT: 2.0
+          
           
         run: |
           # 处理 LITELLM YAML 配置文件
